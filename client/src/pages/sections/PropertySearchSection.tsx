@@ -75,7 +75,7 @@ export const PropertySearchSection = (): JSX.Element => {
                             </span>
                           }
                         />
-                        <ChevronDownIcon className="w-5 h-5" />
+                       
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="option1">Option 1</SelectItem>
@@ -136,7 +136,7 @@ export const PropertySearchSection = (): JSX.Element => {
                         </span>
                       }
                     />
-                    <ChevronDownIcon className="w-5 h-5" />
+                    
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="filter1">Filter 1</SelectItem>

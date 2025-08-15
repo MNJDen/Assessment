@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export const HeroSection = (): JSX.Element => {
   return (
     <section className="flex flex-col w-full items-start relative">
-      <header className="relative w-full [font-family:'Domine',Helvetica] font-bold text-[#232323] text-[120px] text-center tracking-[-2.40px] leading-[120px] whitespace-nowrap mb-5">
+      <header className="relative w-full [font-family:'Domine',Helvetica] font-bold text-[#232323] text-[60px] md:text-[80px] lg:text-[120px] text-center tracking-[-2.40px] leading-tight mb-5">
         Find Your Dream Home
       </header>
 
