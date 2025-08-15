@@ -15,9 +15,8 @@ const servicesData = [
 
 export const OurServicesSection = (): JSX.Element => {
   return (
-    <section className="flex w-full items-start gap-[60px] relative">
+    <section className="flex w-full items-start gap-[60px] relative mt-[50px] mb-[50px]">
       <div className="relative flex-1 grow h-[378px] rounded-xl bg-[url(/figmaAssets/services-image.png)] bg-cover bg-[50%_50%]" />
-
       <div className="flex flex-col items-start gap-[60px] relative flex-1 self-stretch grow">
         <h2 className="relative w-fit mt-[-1.00px] [font-family:'Domine',Helvetica] font-bold text-[#232323] text-[50.5px] tracking-[0] leading-[normal] whitespace-nowrap">
           Our Services
