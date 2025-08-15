@@ -32,15 +32,19 @@ const galleryImages = [
 export const Desktop = (): JSX.Element => {
   return (
     <div className="bg-white w-full">
-      <NavigationBarSection />
-      <HeroSection />
-      <AboutUsSection />
-      <OurServicesSection />
-      <PropertySearchSection />
-      <FeaturedPropertiesSection />
-      <OfficeTitleSection />
-      <OfficeDetailsSection />
-      <NewsletterSignupSection />
+      <div className="px-8 md:px-12 lg:px-16 xl:px-20">
+        <NavigationBarSection />
+      </div>
+      <div className="px-8 md:px-12 lg:px-16 xl:px-20 space-y-16 md:space-y-20 lg:space-y-24">
+        <HeroSection />
+        <AboutUsSection />
+        <OurServicesSection />
+        <PropertySearchSection />
+        <FeaturedPropertiesSection />
+        <OfficeTitleSection />
+        <OfficeDetailsSection />
+        <NewsletterSignupSection />
+      </div>
       <FooterSection />
     </div>
   );

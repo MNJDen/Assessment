@@ -27,7 +27,7 @@ const aboutCards = [
 
 export const AboutUsSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col w-full items-start gap-10 px-12 py-0 mt-[50px] mb-[50px]">
+    <section className="flex flex-col w-full items-start gap-10">
       <h2 className="w-full [font-family:'Domine',Helvetica] font-bold text-[#232323] text-[50.5px] text-center tracking-[0] leading-[normal]">
         Discover What Sets Marci Metzger Apart
       </h2>
