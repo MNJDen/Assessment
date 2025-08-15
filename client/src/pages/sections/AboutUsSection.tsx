@@ -7,21 +7,21 @@ const aboutCards = [
     title: "Top Residential Sales Last 5 Years",
     description:
       "We helped nearly 90 clients in 2021, and closed 28.5 million in sales!\n\nOur team works hard everyday to grow and learn, so that we may continue to excel in our market.",
-    backgroundImage: "bg-[url(/figmaAssets/about-card.svg)]",
+    backgroundImage: "bg-gradient-to-br from-[#BFBFBF] via-[#242424]/50 to-[#BFBFBF]",
   },
   {
     number: "2",
     title: "Doesn't Just List It",
     description:
       "We make sure we get it SOLD!\n\nWe exhaust every avenue to ensure our listings are at the fingertips of every possible buyer, getting you top dollar for your home.",
-    backgroundImage: "bg-[url(/figmaAssets/about-card-1.svg)]",
+    backgroundImage: "bg-gradient-to-br from-[#BFBFBF] via-[#242424]/50 to-[#BFBFBF]",
   },
   {
     number: "3",
     title: "Guide Buyers",
     description:
       "Nobody knows the market like we do.\n\nEnjoy having a pro at your service. Market analysis, upgrades lists, contractors on speed dial, & more!",
-    backgroundImage: "bg-[url(/figmaAssets/about-card-2.svg)]",
+    backgroundImage: "bg-gradient-to-br from-[#BFBFBF] via-[#242424]/50 to-[#BFBFBF]",
   },
 ];
 
@@ -35,10 +35,10 @@ export const AboutUsSection = (): JSX.Element => {
         {aboutCards.map((card, index) => (
           <Card
             key={index}
-            className={`w-full lg:flex-1 h-[400px] sm:h-[500px] lg:h-[577px] rounded-xl overflow-hidden ${card.backgroundImage} bg-[100%_100%] border-0`}
+            className={`w-full lg:flex-1 h-[400px] sm:h-[500px] lg:h-[577px] rounded-xl overflow-hidden ${card.backgroundImage} bg-[100%_100%] border-0 noise-texture transition-all duration-300 ease-in-out hover:scale-[1.02] hover:brightness-110 hover:shadow-2xl`}
           >
             <CardContent className="flex flex-col h-full items-start gap-4 lg:gap-7 p-6 lg:p-10">
-              <div className="flex items-center justify-center w-[60px] h-[60px] lg:w-[75px] lg:h-[75px] rounded-md bg-[linear-gradient(135deg,rgba(218,218,218,1)_0%,rgba(112,112,112,1)_100%)]">
+              <div className="flex items-center justify-center w-[60px] h-[60px] lg:w-[75px] lg:h-[75px] rounded-md bg-[linear-gradient(145deg,#E8E8E8_0%,#B7B7B7_47%,#787878_100%)]">
                 <span className="[font-family:'Outfit',Helvetica] font-black text-white text-[18px] lg:text-[21.3px] text-center tracking-[0] leading-[normal]">
                   {card.number}
                 </span>

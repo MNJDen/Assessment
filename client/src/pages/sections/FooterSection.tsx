@@ -16,11 +16,11 @@ export const FooterSection = (): JSX.Element => {
   ];
 
   return (
-    <footer className="flex flex-col w-full items-center justify-center gap-10 p-12 bg-[#232323]">
-      <div className="flex items-start gap-12 w-full max-w-[1440px]">
-        <img className="flex-1" alt="Logos" src="/figmaAssets/logos.svg" />
+    <footer className="flex flex-col w-full items-center justify-center gap-10 p-6 md:p-12 bg-[#232323] overflow-hidden">
+      <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12 w-full max-w-[1440px]">
+        <img className="w-62 md:flex-1" alt="Logos" src="/figmaAssets/logos.svg" />
 
-        <div className="flex flex-col w-[200px] items-start justify-center gap-2">
+        <div className="flex flex-col w-full md:w-[200px] items-start justify-center gap-2">
           <div className="[font-family:'Outfit',Helvetica] font-medium text-white text-base tracking-[0] leading-5">
             Company
           </div>
@@ -35,7 +35,7 @@ export const FooterSection = (): JSX.Element => {
           ))}
         </div>
 
-        <div className="flex flex-col w-[200px] items-start justify-center gap-2">
+        <div className="flex flex-col w-full md:w-[200px] items-start justify-center gap-2">
           <div className="[font-family:'Outfit',Helvetica] font-medium text-white text-base tracking-[0] leading-5">
             Support
           </div>
@@ -50,7 +50,7 @@ export const FooterSection = (): JSX.Element => {
           ))}
         </div>
 
-        <div className="flex flex-col w-[400px] items-start justify-center gap-4">
+        <div className="flex flex-col w-full md:w-[400px] items-start justify-center gap-4">
           <div className="flex flex-col items-start gap-1 w-full">
             <div className="[font-family:'Outfit',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
               Subscribe to our newsletter
@@ -63,11 +63,11 @@ export const FooterSection = (): JSX.Element => {
           <div className="flex items-start gap-3 w-full">
             <Input
               placeholder="Email address"
-              className="flex-1 bg-[#ffffff17] border-transparent text-white placeholder:text-[#ffffff66] [font-family:'Outfit',Helvetica] font-normal text-base"
+              className="flex-1 h-11 bg-[#ffffff17] border-transparent text-white placeholder:text-[#ffffff66] [font-family:'Outfit',Helvetica] font-normal text-base"
             />
             <Button
               variant="outline"
-              className="h-auto px-4 py-2 border-[#ffffff33] text-white hover:bg-[#ffffff17] [font-family:'Outfit',Helvetica] font-medium text-base"
+              className="h-auto px-4 py-2 bg-white text-[#232323] hover:bg-[#ffffff90] border-white [font-family:'Outfit',Helvetica] font-medium text-base transition-colors"
             >
               Subscribe
             </Button>

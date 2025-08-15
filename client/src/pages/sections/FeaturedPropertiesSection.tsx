@@ -115,10 +115,10 @@ export const FeaturedPropertiesSection = (): JSX.Element => {
       </header>
 
       {/* Embla Carousel */}
-      <div className="embla w-full" ref={emblaRef}>
+      <div className="embla w-full overflow-hidden" ref={emblaRef}>
         <div className="embla__container flex">
           {properties.map((property) => (
-            <div key={property.id} className="embla__slide flex-[0_0_100%] min-w-0 pr-6 md:flex-[0_0_50%] lg:flex-[0_0_33.333%]">
+            <div key={property.id} className="embla__slide flex-[0_0_auto] min-w-[400px] pr-6">
               <Card className="flex flex-col items-start gap-5 border-none shadow-none bg-transparent w-full h-full">
                 <CardContent className="p-0 w-full">
                   <div
