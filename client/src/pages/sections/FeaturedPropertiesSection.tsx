@@ -8,7 +8,8 @@ import useEmblaCarousel from "embla-carousel-react";
 export const FeaturedPropertiesSection = (): JSX.Element => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
     loop: false,
-    align: "start"
+    align: "start",
+    slidesToScroll: 1
   });
 
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
@@ -34,6 +35,7 @@ export const FeaturedPropertiesSection = (): JSX.Element => {
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onSelect);
   }, [emblaApi, onSelect]);
+
   const properties = [
     {
       id: 1,
@@ -77,7 +79,7 @@ export const FeaturedPropertiesSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col w-full items-start gap-10 relative">
+    <section className="flex flex-col w-full items-start relative">
       <header className="flex items-center justify-between w-full mb-10">
         <div className="flex flex-col items-start gap-3">
           <h2 className="[font-family:'Domine',Helvetica] font-bold text-[#232323] text-[50.5px] tracking-[0] leading-[normal]">
@@ -112,77 +114,76 @@ export const FeaturedPropertiesSection = (): JSX.Element => {
         </div>
       </header>
 
-      <div className="relative w-full">
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex">
-            {properties.map((property) => (
-              <div key={property.id} className="flex-[0_0_100%] min-w-0 pl-4 md:flex-[0_0_50%] lg:flex-[0_0_33.333%]">
-                <Card className="flex flex-col items-start gap-5 border-none shadow-none bg-transparent w-full">
-            <CardContent className="p-0 w-full">
-              <div
-                className="w-full h-[385px] rounded-xl bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: `url(${property.image})` }}
-              />
+      {/* Embla Carousel */}
+      <div className="embla w-full" ref={emblaRef}>
+        <div className="embla__container flex">
+          {properties.map((property) => (
+            <div key={property.id} className="embla__slide flex-[0_0_100%] min-w-0 pr-6 md:flex-[0_0_50%] lg:flex-[0_0_33.333%]">
+              <Card className="flex flex-col items-start gap-5 border-none shadow-none bg-transparent w-full h-full">
+                <CardContent className="p-0 w-full">
+                  <div
+                    className="w-full h-[385px] rounded-xl bg-cover bg-center bg-no-repeat"
+                    style={{ backgroundImage: `url(${property.image})` }}
+                  />
 
-              <div className="flex flex-col items-start gap-5 mt-5 w-full max-w-[526px]">
-                <div className="flex flex-col items-start gap-3 w-full">
-                  <h3 className="[font-family:'Outfit',Helvetica] font-bold text-[#232323] text-[28.4px] tracking-[0] leading-[normal]">
-                    {property.title}
-                  </h3>
-                  <p className="[font-family:'Outfit',Helvetica] font-normal text-[#232323] text-base tracking-[0] leading-[normal]">
-                    {property.description}
-                  </p>
-                </div>
+                  <div className="flex flex-col items-start gap-5 mt-5 w-full">
+                    <div className="flex flex-col items-start gap-3 w-full">
+                      <h3 className="[font-family:'Outfit',Helvetica] font-bold text-[#232323] text-[28.4px] tracking-[0] leading-[normal]">
+                        {property.title}
+                      </h3>
+                      <p className="[font-family:'Outfit',Helvetica] font-normal text-[#232323] text-base tracking-[0] leading-[normal]">
+                        {property.description}
+                      </p>
+                    </div>
 
-                <div className="flex items-center gap-3 opacity-70">
-                  <Badge
-                    variant="outline"
-                    className="inline-flex items-center gap-3 p-2 rounded-md border border-solid border-[#232323] bg-transparent"
-                  >
-                    <img
-                      className="w-6 h-6"
-                      alt="Bathtub"
-                      src={property.bathroomIcon}
-                    />
-                    <span className="[font-family:'Outfit',Helvetica] font-normal text-[#232323] text-base tracking-[0] leading-[normal]">
-                      {property.bathrooms} Bathroom
-                    </span>
-                  </Badge>
+                    <div className="flex items-center gap-3 opacity-70">
+                      <Badge
+                        variant="outline"
+                        className="inline-flex items-center gap-3 p-2 rounded-md border border-solid border-[#232323] bg-transparent"
+                      >
+                        <img
+                          className="w-6 h-6"
+                          alt="Bathtub"
+                          src={property.bathroomIcon}
+                        />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#232323] text-base tracking-[0] leading-[normal]">
+                          {property.bathrooms} Bathroom
+                        </span>
+                      </Badge>
 
-                  <Badge
-                    variant="outline"
-                    className="inline-flex items-center gap-3 p-2 rounded-md border border-solid border-[#232323] bg-transparent"
-                  >
-                    <img
-                      className="w-6 h-6"
-                      alt="Bed"
-                      src={property.bedroomIcon}
-                    />
-                    <span className="[font-family:'Outfit',Helvetica] font-normal text-[#232323] text-base tracking-[0] leading-[normal]">
-                      {property.bedrooms} Bedroom
-                    </span>
-                  </Badge>
+                      <Badge
+                        variant="outline"
+                        className="inline-flex items-center gap-3 p-2 rounded-md border border-solid border-[#232323] bg-transparent"
+                      >
+                        <img
+                          className="w-6 h-6"
+                          alt="Bed"
+                          src={property.bedroomIcon}
+                        />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#232323] text-base tracking-[0] leading-[normal]">
+                          {property.bedrooms} Bedroom
+                        </span>
+                      </Badge>
 
-                  <Badge
-                    variant="outline"
-                    className="inline-flex items-center gap-3 p-2 rounded-md border border-solid border-[#232323] bg-transparent"
-                  >
-                    <img
-                      className="w-6 h-6"
-                      alt="Guardian"
-                      src={property.sqftIcon}
-                    />
-                    <span className="[font-family:'Outfit',Helvetica] font-normal text-[#232323] text-base tracking-[0] leading-[normal]">
-                      {property.sqft} sq ft
-                    </span>
-                  </Badge>
-                </div>
-              </div>
+                      <Badge
+                        variant="outline"
+                        className="inline-flex items-center gap-3 p-2 rounded-md border border-solid border-[#232323] bg-transparent"
+                      >
+                        <img
+                          className="w-6 h-6"
+                          alt="Guardian"
+                          src={property.sqftIcon}
+                        />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#232323] text-base tracking-[0] leading-[normal]">
+                          {property.sqft} sq ft
+                        </span>
+                      </Badge>
+                    </div>
+                  </div>
                 </CardContent>
-                </Card>
-              </div>
-            ))}
-          </div>
+              </Card>
+            </div>
+          ))}
         </div>
       </div>
     </section>
