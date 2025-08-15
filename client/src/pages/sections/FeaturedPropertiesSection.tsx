@@ -1,8 +1,43 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
 
 export const FeaturedPropertiesSection = (): JSX.Element => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "start",
+    slidesToScroll: 1,
+    breakpoints: {
+      "(min-width: 768px)": { slidesToScroll: 2 },
+      "(min-width: 1024px)": { slidesToScroll: 3 }
+    }
+  });
+
+  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setPrevBtnDisabled(!emblaApi.canScrollPrev());
+    setNextBtnDisabled(!emblaApi.canScrollNext());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+  }, [emblaApi, onSelect]);
   const properties = [
     {
       id: 1,
@@ -56,12 +91,12 @@ export const FeaturedPropertiesSection = (): JSX.Element => {
         </p>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
-        {properties.map((property) => (
-          <Card
-            key={property.id}
-            className="flex flex-col items-start gap-5 border-none shadow-none bg-transparent"
-          >
+      <div className="relative w-full">
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex gap-6">
+            {properties.map((property) => (
+              <div key={property.id} className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-3">
+                <Card className="flex flex-col items-start gap-5 border-none shadow-none bg-transparent">
             <CardContent className="p-0 w-full">
               <div
                 className="w-full h-[385px] rounded-xl bg-cover bg-center bg-no-repeat"
@@ -122,9 +157,35 @@ export const FeaturedPropertiesSection = (): JSX.Element => {
                   </Badge>
                 </div>
               </div>
-            </CardContent>
-          </Card>
-        ))}
+                </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Navigation Controls */}
+        <div className="flex items-center justify-center gap-4 mt-8">
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={scrollPrev}
+            disabled={prevBtnDisabled}
+            className="rounded-full border-[#232323] text-[#232323] hover:bg-[#232323] hover:text-white disabled:opacity-50"
+          >
+            <ChevronLeftIcon className="h-4 w-4" />
+          </Button>
+          
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={scrollNext}
+            disabled={nextBtnDisabled}
+            className="rounded-full border-[#232323] text-[#232323] hover:bg-[#232323] hover:text-white disabled:opacity-50"
+          >
+            <ChevronRightIcon className="h-4 w-4" />
+          </Button>
+        </div>
       </div>
     </section>
   );
