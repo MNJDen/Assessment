@@ -23,19 +23,16 @@ export const PropertySearchSection = (): JSX.Element => {
       label: "Type",
       type: "select",
       placeholder: "Unit Type",
-      hasIcon: true,
     },
     {
       label: "Bedrooms",
       type: "select",
       placeholder: "1 Bedroom",
-      hasIcon: true,
     },
     {
       label: "Baths",
       type: "select",
       placeholder: "1 bath",
-      hasIcon: true,
     },
   ];
 
@@ -66,29 +63,19 @@ export const PropertySearchSection = (): JSX.Element => {
                   {field.type === "input" ? (
                     <Input
                       placeholder={field.placeholder}
-                      className="flex items-center gap-2.5 px-4 py-5 relative self-stretch w-full flex-[0_0_auto] bg-[#eeeeee] rounded-lg border-0 h-[51px] placeholder:opacity-50 placeholder:[font-family:'Outfit',Helvetica] placeholder:font-normal placeholder:text-[#232323] placeholder:text-base placeholder:text-center"
+                      className="flex items-center gap-2.5 px-4 py-5 relative self-stretch w-full flex-[0_0_auto] bg-[#eeeeee] rounded-lg border-0 h-[51px] placeholder:opacity-50 placeholder:[font-family:'Outfit',Helvetica] placeholder:font-normal placeholder:text-[#232323] placeholder:text-base placeholder:text-left"
                     />
                   ) : (
                     <Select>
                       <SelectTrigger className="flex h-[51px] items-center justify-between px-4 py-5 relative self-stretch w-full bg-[#eeeeee] rounded-lg border-0">
                         <SelectValue
                           placeholder={
-                            <span className="opacity-50 [font-family:'Outfit',Helvetica] font-normal text-[#232323] text-base text-center tracking-[0] leading-[normal] whitespace-nowrap">
+                            <span className="opacity-50 [font-family:'Outfit',Helvetica] font-normal text-[#232323] text-base text-left tracking-[0] leading-[normal] whitespace-nowrap">
                               {field.placeholder}
                             </span>
                           }
                         />
-                        {field.hasIcon &&
-                          (field.label === "Type" ||
-                          field.label === "Filter" ? (
-                            <ChevronDownIcon className="w-5 h-5" />
-                          ) : (
-                            <img
-                              className="relative flex-[0_0_auto]"
-                              alt="Container"
-                              src="/figmaAssets/container.svg"
-                            />
-                          ))}
+                        <ChevronDownIcon className="w-5 h-5" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="option1">Option 1</SelectItem>
@@ -144,7 +131,7 @@ export const PropertySearchSection = (): JSX.Element => {
                   <SelectTrigger className="flex h-[51px] items-center justify-between px-4 py-5 relative self-stretch w-full bg-[#eeeeee] rounded-lg border-0">
                     <SelectValue
                       placeholder={
-                        <span className="opacity-50 [font-family:'Outfit',Helvetica] font-normal text-[#232323] text-base text-center tracking-[0] leading-[normal] whitespace-nowrap">
+                        <span className="opacity-50 [font-family:'Outfit',Helvetica] font-normal text-[#232323] text-base text-left tracking-[0] leading-[normal] whitespace-nowrap">
                           Filter
                         </span>
                       }
