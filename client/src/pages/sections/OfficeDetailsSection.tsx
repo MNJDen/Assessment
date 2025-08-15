@@ -19,7 +19,7 @@ export const OfficeDetailsSection = (): JSX.Element => {
 
   return (
     <section className="flex w-full items-start gap-20 relative">
-      <div className="flex flex-col h-[463px] items-center gap-10 px-0 py-5 relative flex-1 grow">
+      <div className="flex flex-col items-center gap-10 px-0 py-5 relative flex-1 grow">
         <div className="flex flex-col items-start gap-8 relative self-stretch w-full flex-[0_0_auto]">
           <div className="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
             <h1 className="relative self-stretch mt-[-1.00px] [font-family:'Outfit',Helvetica] font-normal text-[#232323] text-[37.9px] tracking-[0] leading-[normal]">
@@ -47,7 +47,7 @@ export const OfficeDetailsSection = (): JSX.Element => {
           </div>
         </div>
 
-        <div className="flex-col items-start gap-5 mb-[-16.00px] flex relative self-stretch w-full flex-[0_0_auto]">
+        <div className="flex-col items-start gap-5 flex relative self-stretch w-full flex-[0_0_auto]">
           <div className="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
             <h2 className="mt-[-1.00px] font-normal text-[#232323] text-[28.4px] relative w-fit [font-family:'Outfit',Helvetica] tracking-[0] leading-[normal] whitespace-nowrap">
               Office Hours
