@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -11,8 +11,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Slider } from "@/components/ui/slider";
 
 export const PropertySearchSection = (): JSX.Element => {
+  const [priceRange, setPriceRange] = useState([0, 800000]);
+
+  const formatPrice = (price: number) => {
+    if (price >= 1000000) {
+      return `$${(price / 1000000).toFixed(1)}M`;
+    } else if (price >= 1000) {
+      return `$${(price / 1000).toFixed(0)}K`;
+    } else {
+      return `$${price.toLocaleString()}`;
+    }
+  };
   const formFields = [
     {
       label: "Location",
@@ -95,7 +107,7 @@ export const PropertySearchSection = (): JSX.Element => {
                   </Label>
 
                   <div className="relative w-fit mt-[-1.00px] [font-family:'Outfit',Helvetica] font-medium text-[#232323] text-base tracking-[0] leading-[normal] whitespace-nowrap">
-                    $ 0 - $800,000+
+                    {formatPrice(priceRange[0])} - {formatPrice(priceRange[1])}+
                   </div>
                 </div>
 
@@ -104,15 +116,14 @@ export const PropertySearchSection = (): JSX.Element => {
                     min
                   </div>
 
-                  <div className="relative w-[521px] h-[38px]">
-                    <div className="left-0 absolute w-[38px] h-[38px] top-0 bg-white rounded-[19px] border border-solid border-[#232323]" />
-
-                    <div className="left-[483px] absolute w-[38px] h-[38px] top-0 bg-white rounded-[19px] border border-solid border-[#232323]" />
-
-                    <img
-                      className="absolute w-[445px] h-[3px] top-[18px] left-[38px]"
-                      alt="Line"
-                      src="/figmaAssets/line-1.svg"
+                  <div className="flex-1">
+                    <Slider
+                      value={priceRange}
+                      onValueChange={setPriceRange}
+                      max={1000000}
+                      min={0}
+                      step={10000}
+                      className="w-full"
                     />
                   </div>
 
