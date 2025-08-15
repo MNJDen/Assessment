@@ -18,7 +18,7 @@ export const OfficeDetailsSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex w-full items-start gap-20 relative">
+    <section className="flex w-full items-start gap-20 relative mt-[20px] mb-[20px]">
       <div className="flex flex-col items-center gap-10 px-0 py-5 relative flex-1 grow">
         <div className="flex flex-col items-start gap-8 relative self-stretch w-full flex-[0_0_auto]">
           <div className="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
@@ -88,7 +88,6 @@ export const OfficeDetailsSection = (): JSX.Element => {
           </Collapsible>
         </div>
       </div>
-
       <div className="relative self-stretch w-[580px] rounded-xl [background:url(../figmaAssets/office-image.png)_50%_50%_/_cover]" />
     </section>
   );
