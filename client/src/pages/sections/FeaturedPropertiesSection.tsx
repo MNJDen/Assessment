@@ -139,42 +139,42 @@ export const FeaturedPropertiesSection = (): JSX.Element => {
                     <div className="flex items-center gap-3 opacity-70">
                       <Badge
                         variant="outline"
-                        className="inline-flex items-center gap-3 p-2 rounded-md border border-solid border-[#232323] bg-transparent"
+                        className="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-solid border-[#232323] bg-transparent"
                       >
                         <img
-                          className="w-6 h-6"
+                          className="w-4 h-4"
                           alt="Bathtub"
                           src={property.bathroomIcon}
                         />
-                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#232323] text-base tracking-[0] leading-[normal]">
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#232323] text-sm tracking-[0] leading-[normal]">
                           {property.bathrooms} Bathroom
                         </span>
                       </Badge>
 
                       <Badge
                         variant="outline"
-                        className="inline-flex items-center gap-3 p-2 rounded-md border border-solid border-[#232323] bg-transparent"
+                        className="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-solid border-[#232323] bg-transparent"
                       >
                         <img
-                          className="w-6 h-6"
+                          className="w-4 h-4"
                           alt="Bed"
                           src={property.bedroomIcon}
                         />
-                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#232323] text-base tracking-[0] leading-[normal]">
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#232323] text-sm tracking-[0] leading-[normal]">
                           {property.bedrooms} Bedroom
                         </span>
                       </Badge>
 
                       <Badge
                         variant="outline"
-                        className="inline-flex items-center gap-3 p-2 rounded-md border border-solid border-[#232323] bg-transparent"
+                        className="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-solid border-[#232323] bg-transparent"
                       >
                         <img
-                          className="w-6 h-6"
+                          className="w-4 h-4"
                           alt="Guardian"
                           src={property.sqftIcon}
                         />
-                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#232323] text-base tracking-[0] leading-[normal]">
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#232323] text-sm tracking-[0] leading-[normal]">
                           {property.sqft} sq ft
                         </span>
                       </Badge>
