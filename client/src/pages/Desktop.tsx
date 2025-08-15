@@ -35,7 +35,7 @@ export const Desktop = (): JSX.Element => {
       <div className="px-8 md:px-12 lg:px-16 xl:px-20">
         <NavigationBarSection />
       </div>
-      <div className="px-8 md:px-12 lg:px-16 xl:px-20 space-y-16 md:space-y-20 lg:space-y-24">
+      <div className="px-8 md:px-12 lg:px-16 xl:px-20 space-y-16 md:space-y-20 lg:space-y-24 mb-16 md:mb-20 lg:mb-24">
         <HeroSection />
         <AboutUsSection />
         <OurServicesSection />
