@@ -6,8 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 
 export const NewsletterSignupSection = (): JSX.Element => {
   return (
-    <section className="w-full h-[279px] rounded-xl overflow-hidden bg-[url(/figmaAssets/newsletter.svg)] bg-[100%_100%] relative">
-      <div className="flex w-full items-start gap-20 p-5 h-full">
+    <section className="w-full min-h-[279px] rounded-xl bg-[url(/figmaAssets/newsletter.svg)] bg-[100%_100%] relative">
+      <div className="flex w-full items-start gap-20 p-8">
         <div className="flex flex-col items-start gap-5 flex-1">
           <h2 className="[font-family:'Outfit',Helvetica] font-bold text-white text-[37.9px] tracking-[0] leading-[normal]">
             Contact Us
