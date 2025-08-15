@@ -40,7 +40,7 @@ export const PropertySearchSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col w-full items-start gap-10 relative">
+    <section className="flex flex-col w-full items-start gap-10 relative mt-[50px] mb-[50px]">
       <div className="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
         <h1 className="mt-[-1.00px] [font-family:'Domine',Helvetica] font-bold text-[50.5px] relative self-stretch text-[#232323] tracking-[0] leading-[normal]">
           Find Your Dream Home
@@ -50,7 +50,6 @@ export const PropertySearchSection = (): JSX.Element => {
           Explore our property listings.
         </p>
       </div>
-
       <Card className="relative self-stretch w-full flex-[0_0_auto] bg-white rounded-xl">
         <CardContent className="flex flex-col items-start gap-12 p-8">
           <div className="flex flex-col items-start gap-8 relative self-stretch w-full flex-[0_0_auto]">
