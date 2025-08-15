@@ -41,7 +41,6 @@ export const Desktop = (): JSX.Element => {
         <OurServicesSection />
         <PropertySearchSection />
         <FeaturedPropertiesSection />
-        <OfficeTitleSection />
         <OfficeDetailsSection />
         <NewsletterSignupSection />
       </div>
