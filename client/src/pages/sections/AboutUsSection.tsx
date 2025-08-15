@@ -37,7 +37,7 @@ export const AboutUsSection = (): JSX.Element => {
             key={index}
             className={`w-full lg:flex-1 h-[400px] sm:h-[500px] lg:h-[577px] rounded-xl overflow-hidden ${card.backgroundImage} bg-[100%_100%] border-0`}
           >
-            <CardContent className="flex flex-col h-full items-start gap-4 lg:gap-7 p-6 lg:p-10">
+            <CardContent className="flex flex-col h-full items-start gap-4 lg:gap-7 p-6 lg:p-10 relative before:absolute before:inset-0 before:bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2780%27%20height%3D%2780%27%20viewBox%3D%270%200%2080%2080%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Cg%20fill%3D%27%23ffffff%27%20fill-opacity%3D%270.03%27%3E%3Cpath%20d%3D%27M20%2020c0-11.046%208.954-20%2020-20s20%208.954%2020%2020-8.954%2020-20%2020-20-8.954-20-20zm0%2040c0-11.046%208.954-20%2020-20s20%208.954%2020%2020-8.954%2020-20%2020-20-8.954-20-20zM0%2020c0-11.046%208.954-20%2020-20s20%208.954%2020%2020-8.954%2020-20%2020S0%2031.046%200%2020zm40%2040c0-11.046%208.954-20%2020-20s20%208.954%2020%2020-8.954%2020-20%2020-20-8.954-20-20zm0-40c0-11.046%208.954-20%2020-20s20%208.954%2020%2020-8.954%2020-20%2020-20-8.954-20-20z%27/%3E%3C/g%3E%3C/svg%3E')] before:opacity-60 before:pointer-events-none before:rounded-xl">
               <div className="flex items-center justify-center w-[60px] h-[60px] lg:w-[75px] lg:h-[75px] rounded-md bg-[linear-gradient(135deg,rgba(218,218,218,1)_0%,rgba(112,112,112,1)_100%)]">
                 <span className="[font-family:'Outfit',Helvetica] font-black text-white text-[18px] lg:text-[21.3px] text-center tracking-[0] leading-[normal]">
                   {card.number}

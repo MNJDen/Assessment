@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 export const NewsletterSignupSection = (): JSX.Element => {
   return (
-    <section className="w-full rounded-xl overflow-hidden bg-[linear-gradient(135deg,rgba(35,35,35,0.9)_0%,rgba(50,50,50,0.8)_50%,rgba(35,35,35,0.9)_100%)] relative">
+    <section className="w-full rounded-xl overflow-hidden bg-[linear-gradient(135deg,rgba(35,35,35,0.9)_0%,rgba(50,50,50,0.8)_50%,rgba(35,35,35,0.9)_100%)] relative before:absolute before:inset-0 before:bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2780%27%20height%3D%2780%27%20viewBox%3D%270%200%2080%2080%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Cg%20fill%3D%27%23ffffff%27%20fill-opacity%3D%270.04%27%3E%3Cpath%20d%3D%27M20%2020c0-11.046%208.954-20%2020-20s20%208.954%2020%2020-8.954%2020-20%2020-20-8.954-20-20zm0%2040c0-11.046%208.954-20%2020-20s20%208.954%2020%2020-8.954%2020-20%2020-20-8.954-20-20zM0%2020c0-11.046%208.954-20%2020-20s20%208.954%2020%2020-8.954%2020-20%2020S0%2031.046%200%2020zm40%2040c0-11.046%208.954-20%2020-20s20%208.954%2020%2020-8.954%2020-20%2020-20-8.954-20-20zm0-40c0-11.046%208.954-20%2020-20s20%208.954%2020%2020-8.954%2020-20%2020-20-8.954-20-20z%27/%3E%3C/g%3E%3C/svg%3E')] before:opacity-50 before:pointer-events-none before:rounded-xl">
       <div className="flex flex-col lg:flex-row w-full items-start gap-8 lg:gap-20 p-4 md:p-6 lg:p-8">
         <div className="flex flex-col items-start gap-5 w-full lg:flex-1">
           <h2 className="[font-family:'Outfit',Helvetica] font-bold text-white text-[24px] sm:text-[28px] md:text-[32px] lg:text-[37.9px] tracking-[0] leading-[normal]">
