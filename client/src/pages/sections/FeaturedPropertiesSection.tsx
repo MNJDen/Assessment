@@ -6,14 +6,9 @@ import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
 export const FeaturedPropertiesSection = (): JSX.Element => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-    align: "start",
-    slidesToScroll: 1,
-    breakpoints: {
-      "(min-width: 768px)": { slidesToScroll: 2 },
-      "(min-width: 1024px)": { slidesToScroll: 3 }
-    }
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: false,
+    align: "start"
   });
 
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
@@ -37,6 +32,7 @@ export const FeaturedPropertiesSection = (): JSX.Element => {
     if (!emblaApi) return;
     onSelect();
     emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
   }, [emblaApi, onSelect]);
   const properties = [
     {
@@ -82,21 +78,46 @@ export const FeaturedPropertiesSection = (): JSX.Element => {
 
   return (
     <section className="flex flex-col w-full items-start gap-10 relative">
-      <header className="flex flex-col items-start gap-3 relative w-full">
-        <h2 className="[font-family:'Domine',Helvetica] font-bold text-[#232323] text-[50.5px] tracking-[0] leading-[normal]">
-          Top Properties
-        </h2>
-        <p className="[font-family:'Outfit',Helvetica] font-normal text-base text-[#232323] tracking-[0] leading-[normal]">
-          Discover our featured listings.
-        </p>
+      <header className="flex items-center justify-between w-full mb-10">
+        <div className="flex flex-col items-start gap-3">
+          <h2 className="[font-family:'Domine',Helvetica] font-bold text-[#232323] text-[50.5px] tracking-[0] leading-[normal]">
+            Top Properties
+          </h2>
+          <p className="[font-family:'Outfit',Helvetica] font-normal text-base text-[#232323] tracking-[0] leading-[normal]">
+            Discover our featured listings.
+          </p>
+        </div>
+        
+        {/* Navigation Controls */}
+        <div className="flex items-center gap-4">
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={scrollPrev}
+            disabled={prevBtnDisabled}
+            className="rounded-full border-[#232323] text-[#232323] hover:bg-[#232323] hover:text-white disabled:opacity-50"
+          >
+            <ChevronLeftIcon className="h-4 w-4" />
+          </Button>
+          
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={scrollNext}
+            disabled={nextBtnDisabled}
+            className="rounded-full border-[#232323] text-[#232323] hover:bg-[#232323] hover:text-white disabled:opacity-50"
+          >
+            <ChevronRightIcon className="h-4 w-4" />
+          </Button>
+        </div>
       </header>
 
       <div className="relative w-full">
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-6">
+          <div className="flex">
             {properties.map((property) => (
-              <div key={property.id} className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-3">
-                <Card className="flex flex-col items-start gap-5 border-none shadow-none bg-transparent">
+              <div key={property.id} className="flex-[0_0_100%] min-w-0 pl-4 md:flex-[0_0_50%] lg:flex-[0_0_33.333%]">
+                <Card className="flex flex-col items-start gap-5 border-none shadow-none bg-transparent w-full">
             <CardContent className="p-0 w-full">
               <div
                 className="w-full h-[385px] rounded-xl bg-cover bg-center bg-no-repeat"
@@ -162,29 +183,6 @@ export const FeaturedPropertiesSection = (): JSX.Element => {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Navigation Controls */}
-        <div className="flex items-center justify-center gap-4 mt-8">
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={scrollPrev}
-            disabled={prevBtnDisabled}
-            className="rounded-full border-[#232323] text-[#232323] hover:bg-[#232323] hover:text-white disabled:opacity-50"
-          >
-            <ChevronLeftIcon className="h-4 w-4" />
-          </Button>
-          
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={scrollNext}
-            disabled={nextBtnDisabled}
-            className="rounded-full border-[#232323] text-[#232323] hover:bg-[#232323] hover:text-white disabled:opacity-50"
-          >
-            <ChevronRightIcon className="h-4 w-4" />
-          </Button>
         </div>
       </div>
     </section>
