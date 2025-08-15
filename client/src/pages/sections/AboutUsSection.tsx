@@ -27,11 +27,10 @@ const aboutCards = [
 
 export const AboutUsSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col w-full items-start gap-10 px-12 py-0">
+    <section className="flex flex-col w-full items-start gap-10 px-12 py-0 mt-[50px] mb-[50px]">
       <h2 className="w-full [font-family:'Domine',Helvetica] font-bold text-[#232323] text-[50.5px] text-center tracking-[0] leading-[normal]">
         Discover What Sets Marci Metzger Apart
       </h2>
-
       <div className="flex items-center gap-[60px] w-full">
         {aboutCards.map((card, index) => (
           <Card
